@@ -10,6 +10,16 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
       var analyser = context.createAnalyser();
       analyser.smoothingTimeConstant = 0.2;
       analyser.fftSize = 1024;
+      
+      ====================
+        var AudioContext = window.AudioContext || window.webkitAudioContext;
+var audioCtx = new AudioContext();
+// Older webkit/blink browsers require a prefix
+
+...
+
+var myListener = audioCtx.listener;
+        ===================
 
       var node = context.createScriptProcessor(2048, 1, 1);
 
